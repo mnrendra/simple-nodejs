@@ -1,5 +1,6 @@
 // import dari dependensi pihak ke-3
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 
 // deklarasi variable umum (common)
@@ -24,6 +25,7 @@ mongoose.connect(DB_URL)
     const app = express()
     // app menggunakan fitur json (agar bisa menerima json dari luar)
     app.use(express.json())
+    app.use(cors())
 
     /*
      * Fitur GET Banyak
